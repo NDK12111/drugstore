@@ -24,7 +24,7 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace min="0" pref="226" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="250" max="32767" attributes="0"/>
               <Component id="main" min="-2" pref="1244" max="-2" attributes="0"/>
           </Group>
           <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
@@ -386,7 +386,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="14" style="1"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Admin"/>
+            <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
           </Properties>
         </Component>
       </SubComponents>

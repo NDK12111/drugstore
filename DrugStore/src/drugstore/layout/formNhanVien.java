@@ -296,7 +296,7 @@ public class formNhanVien extends javax.swing.JFrame {
         jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/drugstore/img/user.png"))); // NOI18N
 
         jLabel12.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        jLabel12.setText("Admin");
+        jLabel12.setText("Nhân Viên");
 
         javax.swing.GroupLayout topLayout = new javax.swing.GroupLayout(top);
         top.setLayout(topLayout);
@@ -1356,7 +1356,7 @@ public class formNhanVien extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 226, Short.MAX_VALUE)
+                .addGap(0, 250, Short.MAX_VALUE)
                 .addComponent(main, javax.swing.GroupLayout.PREFERRED_SIZE, 1244, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
