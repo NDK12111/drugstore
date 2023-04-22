@@ -4,12 +4,18 @@
  */
 package drugstore.layout;
 
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import javax.swing.JOptionPane;
+import javax.swing.JFrame;
+
 /**
  *
  * @author khang
  */
 public class formDangNhap extends javax.swing.JFrame {
 
+    private JFrame frame;
     /**
      * Creates new form formDangNhap
      */
@@ -29,9 +35,9 @@ public class formDangNhap extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        txtuserName = new javax.swing.JTextField();
+        txtpassWord = new javax.swing.JPasswordField();
+        check = new javax.swing.JCheckBox();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
 
@@ -43,11 +49,26 @@ public class formDangNhap extends javax.swing.JFrame {
 
         jLabel3.setText("Mật Khẩu:");
 
-        jCheckBox1.setText("Hiển Thị Mật Khẩu");
+        check.setText("Hiển Thị Mật Khẩu");
+        check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                checkActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Đăng Nhập");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Thoát");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -61,13 +82,13 @@ public class formDangNhap extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1))
+                        .addComponent(txtuserName))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jCheckBox1)
-                            .addComponent(jPasswordField1)
+                            .addComponent(check)
+                            .addComponent(txtpassWord)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(82, 82, 82)
@@ -81,13 +102,13 @@ public class formDangNhap extends javax.swing.JFrame {
                 .addGap(36, 36, 36)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtuserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtpassWord, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
+                .addComponent(check)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -95,8 +116,58 @@ public class formDangNhap extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String username = txtuserName.getText();
+        String password = txtpassWord.getText();
+        
+             StringBuilder sb = new StringBuilder();
+        if(username .equals("" )){
+            sb.append("Vui lòng nhập tên tài khoản\n");
+        }
+        else if(password .equals("")){
+            sb.append("Vui lòng nhập mật khẩu\n");
+        }
+        else if(username .contains("quanly") && password .contains(("quanly"))){
+            JOptionPane.showMessageDialog(this,"Đăng nhập thành công");
+            formQuanLy frmquanLy = new formQuanLy();
+            frmquanLy.setVisible(true);
+        }
+         else if(username .contains("nhanvien") && password .contains(("nhanvien"))){
+            JOptionPane.showMessageDialog(this,"Đăng nhập thành công");
+            formNhanVien frmnhanVien = new formNhanVien();
+            frmnhanVien.setVisible(true);
+        }
+        else {
+            JOptionPane.showMessageDialog(this,"Nhập sai tên tài khoản hoặc mật khẩu !!!","Thông Báo",
+                    JOptionPane.ERROR_MESSAGE);
+        }
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        frame = new JFrame("Exit");
+        if(JOptionPane.showConfirmDialog(frame,"Bạn có chắc muốn thoát!","Thông Báo",JOptionPane.YES_NO_OPTION)==JOptionPane.YES_NO_OPTION){
+            System.exit(0);
+        }
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void checkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_checkActionPerformed
+        if(check.isSelected()){
+            txtpassWord.setEchoChar((char)0);
+        }
+        else{
+            txtpassWord.setEchoChar('*');
+        }
+    }//GEN-LAST:event_checkActionPerformed
+
+    private void systemExit()
+    {
+        WindowEvent iClose = new WindowEvent(this,WindowEvent.WINDOW_CLOSING);
+        Toolkit.getDefaultToolkit().getSystemEventQueue().postEvent(iClose);
+    }
     /**
      * @param args the command line arguments
      */
@@ -133,13 +204,13 @@ public class formDangNhap extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox check;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField txtpassWord;
+    private javax.swing.JTextField txtuserName;
     // End of variables declaration//GEN-END:variables
 }

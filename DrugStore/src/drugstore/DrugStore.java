@@ -4,6 +4,7 @@
  */
 package drugstore;
 
+import drugstore.layout.formDangNhap;
 import drugstore.layout.formQuanLy;
 
 /**
@@ -16,7 +17,7 @@ public class DrugStore {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new formQuanLy().setVisible(true);
+        new formDangNhap().setVisible(true);
     }
     
 }
